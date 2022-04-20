@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Amy J Baldwin">
+  <link rel="canonical" href="https://volac-genomics.github.io/maintenance_docs/containers.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Updating software - Maintenance Manual</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Updating software";
+    var mkdocs_page_input_path = "containers.md";
+    var mkdocs_page_url = "/maintenance_docs/containers.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Maintenance Manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Contents</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="app.html">Appliance description</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="server.html">Server description</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Appliance Upkeep</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="containers.html">Updating software</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#image-registries">Image Registries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#specifying-alternative-software-versions">Specifying alternative software version(s)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#original-configurations-for-core">Original configurations for Core</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#original-configurations-for-tool-1">Original configurations for Tool 1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#original-configurations-for-tool-2">Original configurations for Tool 2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#original-configurations-for-tool-3">Original configurations for Tool 3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#original-configurations-for-tool-4">Original configurations for Tool 4</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="reflib.html">Updating reference libraries</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing a library</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="clear.html">Removing un-needed files</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="input.html">Populating the Tool input folders</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Server Upkeep</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="secure.html">Security updates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="apt_update.html">Updating apt</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Disaster Recovery</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="rebuild.html">A fresh build</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Additional Info</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="access.html">Accessing the server</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Maintenance Manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Appliance Upkeep &raquo;</li>
+        
+      
+    
+    <li>Updating software</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/volac-genomics/maintenance_docs/edit/master/docs/containers.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-updated-software-versions">Using updated software versions</h1>
+<p>The Tools are functional in their original configuration. </p>
+<p>Each Tool is a pipeline that connects many pieces of software. Each piece of software can be exchanged for a different version of the same software. An alternative version could be newer, older, or from a different source. </p>
+<p>Each piece of software is housed in a stand-alone unit called a container. Containers are portable and reproducible; they allow the packaging of software and their associated environments (OS, libraries, tools, etc.) within an encapsulated file.</p>
+<p>To use a different software version simply specify a different container.</p>
+<hr />
+<h2 id="image-registries">Image Registries</h2>
+<p>The first thing you need to do is choose the a container. </p>
+<p><a href="https://biocontainers-edu.readthedocs.io/en/latest/index.html">Biocontainers</a> and <a href="https://hub.docker.com/u/staphb">StaphB</a> are both a good source of up-to-date and reliable container images for genomic analysis.</p>
+<p>Container Images can also be found in:</p>
+<ul>
+<li><a href="https://cloud.sylabs.io/library">Sylabs.io Container Library</a> </li>
+<li><a href="https://hub.docker.com/search?q=&type=image">Docker Hub</a> </li>
+<li><a href="https://singularityhub.github.io/singularityhub-docs/">Singularity Hub</a> (no longer updated) </li>
+<li><a href="https://github.com/">GitHub</a></li>
+
+</ul>
+
+<p>For example:</p>
+<p><img src="img/ss_docker_roary.png" alt="staphb roary repository" width="400"> </p>
+<p>To choose the version of the software tool look in the tab named 'tags'; the different versions are listed. </p>
+<hr />
+<h2 id="specifying-alternative-software-versions">Specifying alternative software version(s)</h2>
+<p>The Core, and each Tools all have an individual <code>nextflow.config</code> file. This is where the containers (and consequently, the encapsulated software) is specified.</p>
+<p>To edit the <code>nextflow.config</code> file:</p>
+<ol>
+<li> located the relevant <code>nextflow.config</code> file </li>
+<li> double click to open the file </li>
+<li> update the container address <em>ONLY</em> </li>
+<li> run the pipeline to confirm that the alternative container is functional 
+</ol>
+
+<p>For example, in this case, the <code>trimGaloreFastQC</code> process uses the container <code>'quay.io/biocontainers/trim-galore:0.6.6--0'</code>,</p>
+<pre><code>process {
+        withName:trimGaloreFastQC {
+            container = 'quay.io/biocontainers/trim-galore:0.6.6--0'
+        }
+</code></pre>
+<p>which can be updated to <code>'quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0'</code>.</p>
+<pre><code>process {
+        withName:trimGaloreFastQC {
+            container = 'quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0'
+        }
+</code></pre>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You must modify all containers that use the same software. </p>
+<p>For example, <code>seqtk</code>, <code>seqtkSummary</code> and <code>version_seqtk</code> all use <code>'quay.io/biocontainers/seqtk:1.3--h5bf99c6_3'</code>. Therefore, change all three.</p>
+</div>
+<h2 id="original-configurations-for-core">Original configurations for Core</h2>
+<pre><code>process {
+    withName:version_trim_galore {
+        container = 'quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0'
+    }            
+    withName:trimGaloreFastQC {
+        container = 'quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0'
+    }
+
+    withName:version_seqtk {
+        container = 'quay.io/biocontainers/seqtk:1.3--h84994c4_1'
+    }
+    withName:seqtk {
+        container = 'quay.io/biocontainers/seqtk:1.3--h84994c4_1'
+    }
+    withName:seqtkSummary {
+        container = 'quay.io/biocontainers/seqtk:1.3--h84994c4_1'
+    }
+
+    withName:version_shovill {
+        container = 'quay.io/biocontainers/shovill:1.1.0--hdfd78af_1'
+    }
+    withName:shovill {
+        container = 'quay.io/biocontainers/shovill:1.1.0--hdfd78af_1'
+    }
+
+    withName:version_quast {
+        container = 'nanozoo/quast:5.0.2--e7f0cfe'
+    }
+    withName:quast {
+        container = 'nanozoo/quast:5.0.2--e7f0cfe'
+    }
+
+    withName:version_prokka {
+        container = 'quay.io/biocontainers/prokka:1.14.6--pl5321hdfd78af_4'
+    }
+    withName:prokka {
+        container = 'quay.io/biocontainers/prokka:1.14.6--pl5321hdfd78af_4'
+    }
+
+    withName:version_multiQC {
+        container = 'ewels/multiqc:v1.11'
+    }
+    withName:multiQC {
+        container = 'ewels/multiqc:v1.11'
+    }
+
+    withName:version_abricate {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }   
+    withName:massScreeningDatabaseDownload {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }
+    withName:massScreening {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }
+    withName:massScreeningSummary {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }
+
+    withName:version_kraken2 {
+        container = 'quay.io/biocontainers/kraken2:2.1.2--pl5321h9f5acd7_2'
+    }
+    withName:kraken2 {
+        container = 'quay.io/biocontainers/kraken2:2.1.2--pl5321h9f5acd7_2'
+    }
+    withName:kraken2_miniKraken {
+        container = 'quay.io/biocontainers/kraken2:2.1.2--pl5321h9f5acd7_2'
+    }
+    withName:kraken2_QC {
+        container = 'quay.io/biocontainers/kraken2:2.1.2--pl5321h9f5acd7_2'
+    }
+
+    withName:version_fastANI {
+        container = 'quay.io/biocontainers/fastani:1.33--h0fdf51a_0'
+    }
+    withName:fastANI {
+        container = 'quay.io/biocontainers/fastani:1.33--h0fdf51a_0'
+    }
+
+    withName:version_fasttree {
+        container = 'quay.io/biocontainers/fasttree:2.1.10--h779adbc_6'
+    }
+    withName:fasttree {
+        container = 'quay.io/biocontainers/fasttree:2.1.10--h779adbc_6'
+    }
+
+    withName:lsBSR_NEW {
+        container = 'quay.io/annacprice/extractcoregenome:1.03-r1'
+    }   
+}
+</code></pre>
+<hr />
+<h2 id="original-configurations-for-tool-1">Original configurations for Tool 1</h2>
+<pre><code>process { 
+    container = 'nanozoo/abricate:1.0.1--8960147' 
+}
+</code></pre>
+<hr />
+<h2 id="original-configurations-for-tool-2">Original configurations for Tool 2</h2>
+<pre><code>process {
+    withName:version {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+        }
+    withName:make_custom_DB {
+        container = 'ncbi/blast:2.13.0'
+    }
+    withName:massScreening {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }
+    withName:massScreeningSummary {
+        container = 'nanozoo/abricate:1.0.1--8960147'
+    }
+}
+</code></pre>
+<hr />
+<h2 id="original-configurations-for-tool-3">Original configurations for Tool 3</h2>
+<pre><code>process {
+    withName:roary {
+        container = 'docker://quay.io/biocontainers/roary:3.13.0--pl526h516909a_0'
+    }
+    withName:fasttree {
+        container = 'docker://quay.io/biocontainers/fasttree:2.1.11--h779adbc_0'
+    }
+}
+</code></pre>
+<hr />
+<h2 id="original-configurations-for-tool-4">Original configurations for Tool 4</h2>
+<pre><code>process {
+    withName:predictORFs {
+        container = 'quay.io/biocontainers/prodigal:2.6.3--h516909a_2'
+    }
+    withName:makeBLASTDatabase {
+        container = 'ncbi/blast:2.13.0'
+    }
+    withName:BLASTGeneSequences {
+        container = 'ncbi/blast:2.13.0'
+    }
+    withName:extractNoHitGenes {
+        container = 'staphb/samtools:1.15'
+    }
+    withName:sortNoHitGenes {
+        container = 'nanozoo/bbmap:38.86--9ebcbfa'
+    }
+    withName:getLongestGenes {
+        container = 'quay.io/biocontainers/seqtk:1.3--h84994c4_1'
+    }
+}
+</code></pre>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reflib.html" class="btn btn-neutral float-right" title="Updating reference libraries">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="server.html" class="btn btn-neutral" title="Server description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/volac-genomics/maintenance_docs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="server.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="reflib.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

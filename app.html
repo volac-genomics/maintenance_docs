@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Amy J Baldwin">
+  <link rel="canonical" href="https://volac-genomics.github.io/maintenance_docs/app.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Appliance description - Maintenance Manual</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Appliance description";
+    var mkdocs_page_input_path = "app.md";
+    var mkdocs_page_url = "/maintenance_docs/app.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Maintenance Manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Contents</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="app.html">Appliance description</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-genome-analysis-tools">The Genome Analysis Tools</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-reference-libraries">The Reference Libraries</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#maxthree-for-taxonomy-and-tool-4">maxThree for Taxonomy and Tool 4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maxone-for-phylogeny">maxOne for Phylogeny</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kraken2">kraken2</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="server.html">Server description</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Appliance Upkeep</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="containers.html">Updating software</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="reflib.html">Updating reference libraries</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing a library</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="clear.html">Removing un-needed files</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="input.html">Populating the Tool input folders</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Server Upkeep</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="secure.html">Security updates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="apt_update.html">Updating apt</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Disaster Recovery</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="rebuild.html">A fresh build</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Additional Info</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="access.html">Accessing the server</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Maintenance Manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Introduction &raquo;</li>
+        
+      
+    
+    <li>Appliance description</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/volac-genomics/maintenance_docs/edit/master/docs/app.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="the-genome-analysis-tools">The Genome Analysis Tools</h2>
+<p>These tools were designed to explore bacterial genomes. The suite includes:</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://volac-genomics.github.io/Core_docs/index.html">The Core</a></td>
+<td align="left">Genome assembly, taxonomic classification, phylogeny, annotation and mass screening.</td>
+</tr>
+<tr>
+<td><a href="https://volac-genomics.github.io/Tool1_docs/index.html">Tool 1</a></td>
+<td align="left">Mass screening with curated databases.</td>
+</tr>
+<tr>
+<td><a href="https://volac-genomics.github.io/Tool2_docs/index.html">Tool 2</a></td>
+<td align="left">Mass screening with genes you choose.</td>
+</tr>
+<tr>
+<td><a href="https://volac-genomics.github.io/Tool3_docs/index.html">Tool 3</a></td>
+<td align="left">Comparison of genomes, and phylogeny.</td>
+</tr>
+<tr>
+<td><a href="https://volac-genomics.github.io/Tool4_docs/index.html">Tool 4</a></td>
+<td align="left">Primer design: identification of unique stretches of DNA.</td>
+</tr>
+</tbody>
+</table>
+<p>They are built with the pipeline manager <a href="https://www.nextflow.io/">Nextflow</a>, and operate within <a href="https://sylabs.io/singularity">Singularity</a> containers.</p>
+<p>The suite was developed as part of a collaborative project between <a href="https://www.volac.com/">Volac International Ltd</a>. and <a href="https://www.cardiff.ac.uk/">Cardiff University</a>, funded in part by <a href="https://www.gov.uk/government/organisations/innovate-uk">Innovate UK</a> as part of a <a href="https://www.ktp-uk.org/">knowledge transfer partnership (KTP)</a>.</p>
+<hr />
+<h2 id="the-reference-libraries">The Reference Libraries</h2>
+<h3 id="maxthree-for-taxonomy-and-tool-4">maxThree <em>for Taxonomy</em> and <em>Tool 4</em></h3>
+<p>The maxThree reference library contains genome assemblies of lactic acid bacteria. Three strains of every species within the following Genera are included:</p>
+<ul>
+<li> all Genera from the newly named Lactobacillaceae* family </li>
+<li> the Genera Enterococcus, </li>
+<li> the Genera Carnobacterium, and </li>
+<li> the Genera Lactococcus. </li>
+</ul>
+
+<p><em>* see below for a list of the Genera with family Lactobacillaceae.</em></p>
+<p>The genomes are downloaded from the RefSeq database. The strains with the highest specifications are included. For some species, data for fewer than three strains is available.</p>
+<p>File names are Genus_species_strain, and are cleaned to remove any spaces, colons, backslashes and additional information. </p>
+<p>For the Core's taxonomy module, the genome assemblies are saved as <code>.fna</code> in a folder named <code>fna_YYYY-MM-DD</code>. A separate folder containing lists of all the downloaded strains is also generated, <code>fna_ref_lists_YYYY-MM-DD/</code>.</p>
+<p>For Tool 4, the genome assemblies are saved as <code>.fasta</code> in a folder named <code>tool4_fasta_YYYY-MM-DD</code>.</p>
+<hr />
+<h3 id="maxone-for-phylogeny">maxOne <em>for Phylogeny</em></h3>
+<p>The <a href="https://AmyBaldwin.github.io/Core/index.html">Core</a> uses the maxOne reference library to generate a phylogenetic tree. Like maxThree, the maxOne reference library also contains genome assemblies of lactic acid bacteria. </p>
+<p>One strains of every species within the newly named Lactobacillaceae* family are included.</p>
+<p><em>* see below for a list of the Genera with family Lactobacillaceae.</em></p>
+<p>This library is made using a similar script to maxThree, however in this case a single genome for each species is included. 
+File names are Genus_species_strain, and are cleaned to remove any spaces, colons, backslashes and additional information. They are saved as <code>.fasta</code> in a folder named <code>fasta_YYYY-MM-DD</code>.</p>
+<hr />
+<h3 id="kraken2">kraken2</h3>
+<p>kraken2 databases are required by three different processes in the <a href="https://AmyBaldwin.github.io/Core/index.html">Core Tool</a>: </p>
+<ul>
+<li> <code>kraken2_QC</code> determines if contamination is present in the raw reads,</li>
+<li> <code>kraken2</code> is used to determine the Genus of each query strain and </li>
+<li> <code>kraken2_miniKraken</code> provides taxonomy information if the isolate is of an unexpected Genus.</li>
+</ul>
+
+<hr />
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>The 31 Genera of the Lactobacillaceae family are:</p>
+<p>Acetilactobacillus, Agrilactobacillus, Amylolactobacillus, Apilactobacillus, Bombilactobacillus, Companilactobacillus, Convivina, Dellaglioa, Fructilactobacillus, Fructobacillus, Furfurilactobacillus, Holzapfelia, Lacticaseibacillus, Lactiplantibacillus, Lactobacillus, Lapidilactobacillus, Latilactobacillus, Lentilactobacillus, Leuconostoc, Levilactobacillus, Ligilactobacillus, Limosilactobacillus, Liquorilactobacillus, Loigolactobacillus, Oenococcus, Paralactobacillus, Paucilactobacillus, Schleiferilactobacillus, Secundilactobacillus, Pediococcus, Weissella.</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="server.html" class="btn btn-neutral float-right" title="Server description">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Contents"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/volac-genomics/maintenance_docs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="server.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
